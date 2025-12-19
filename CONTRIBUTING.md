@@ -111,7 +111,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install requests urllib3
 
 # Run tests
-python unauth-api-tester.py example-api-spec.json --base-url https://httpbin.org
+python uauthapix.py example-api-spec.json --base-url https://httpbin.org
 ```
 
 ## Testing Guidelines

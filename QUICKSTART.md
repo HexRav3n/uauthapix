@@ -12,26 +12,26 @@ pip install requests urllib3
 ### 1. Basic Test
 Test an API using an OpenAPI spec:
 ```bash
-python unauth-api-tester.py example-api-spec.json --base-url https://api.example.com
+python uauthapix.py example-api-spec.json --base-url https://api.example.com
 ```
 
 ### 2. Comprehensive Scan
 Run all tests with increased verbosity:
 ```bash
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com --test-all -vv
+python uauthapix.py api-spec.json --base-url https://api.example.com --test-all -vv
 ```
 
 ### 3. Export Results
 Generate an HTML report:
 ```bash
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com --test-all --output report.html --format html
+python uauthapix.py api-spec.json --base-url https://api.example.com --test-all --output report.html --format html
 ```
 
 ## Common Use Cases
 
 ### Testing with Burp Suite
 ```bash
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://api.example.com \
   --proxy http://127.0.0.1:8080 \
   --test-all
@@ -39,7 +39,7 @@ python unauth-api-tester.py api-spec.json \
 
 ### Fast Scan (Multiple Threads)
 ```bash
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://api.example.com \
   --threads 10 \
   --delay 0.1 \
@@ -48,7 +48,7 @@ python unauth-api-tester.py api-spec.json \
 
 ### Quiet Mode (Only Show Vulnerabilities)
 ```bash
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://api.example.com \
   --test-all \
   -q
@@ -63,7 +63,7 @@ X-API-Key: your-api-key
 
 Then run:
 ```bash
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://api.example.com \
   --custom-headers headers.txt \
   --test-headers
@@ -71,7 +71,7 @@ python unauth-api-tester.py api-spec.json \
 
 ### Exclude Certain Endpoints
 ```bash
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://api.example.com \
   --exclude "/health" \
   --exclude "/metrics" \
@@ -108,11 +108,11 @@ Duration:             2.34s
 
 ```bash
 # Test the example API spec (will fail since the URL is not real)
-python unauth-api-tester.py example-api-spec.json
+python uauthapix.py example-api-spec.json
 
 # The spec includes a server URL, so --base-url is optional
 # To test against a real API, override with --base-url:
-python unauth-api-tester.py example-api-spec.json --base-url https://your-real-api.com
+python uauthapix.py example-api-spec.json --base-url https://your-real-api.com
 ```
 
 ## Tips
@@ -127,7 +127,7 @@ python unauth-api-tester.py example-api-spec.json --base-url https://your-real-a
 ## Getting Help
 
 ```bash
-python unauth-api-tester.py --help
+python uauthapix.py --help
 ```
 
 For full documentation, see [README.md](README.md)

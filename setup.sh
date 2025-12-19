@@ -40,13 +40,13 @@ echo "✅ Dependencies installed"
 # Make script executable
 echo ""
 echo "🔧 Making script executable..."
-chmod +x unauth-api-tester.py
+chmod +x uauthapix.py
 echo "✅ Script is now executable"
 
 # Test installation
 echo ""
 echo "🧪 Testing installation..."
-if python3 unauth-api-tester.py --help > /dev/null 2>&1; then
+if python3 uauthapix.py --help > /dev/null 2>&1; then
     echo "✅ Installation successful!"
 else
     echo "❌ Installation test failed"
@@ -62,13 +62,13 @@ echo ""
 echo "🚀 Quick Start:"
 echo ""
 echo "  # View help"
-echo "  python3 unauth-api-tester.py --help"
+echo "  python3 uauthapix.py --help"
 echo ""
 echo "  # Basic test"
-echo "  python3 unauth-api-tester.py api-spec.json --base-url https://api.example.com"
+echo "  python3 uauthapix.py api-spec.json --base-url https://api.example.com"
 echo ""
 echo "  # Full security scan"
-echo "  python3 unauth-api-tester.py api-spec.json --base-url https://api.example.com --test-all -vv"
+echo "  python3 uauthapix.py api-spec.json --base-url https://api.example.com --test-all -vv"
 echo ""
 echo "📖 Documentation: README.md"
 echo "⚡ Quick Reference: QUICKSTART.md"

@@ -121,13 +121,13 @@ The 2.0 version is a complete rewrite with many new features. Key differences:
 **Usage**:
 ```bash
 # Old v1.0 usage
-python unauth-api-tester.py spec.json https://api.example.com
+python uauthapix.py spec.json https://api.example.com
 
 # New v2.0 usage
-python unauth-api-tester.py spec.json --base-url https://api.example.com
+python uauthapix.py spec.json --base-url https://api.example.com
 
 # With advanced features
-python unauth-api-tester.py spec.json --base-url https://api.example.com --test-all -vv
+python uauthapix.py spec.json --base-url https://api.example.com --test-all -vv
 ```
 
 **Migration**: Simply update your command line to use `--base-url` flag instead of positional argument.

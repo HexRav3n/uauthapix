@@ -62,7 +62,7 @@ pip install requests urllib3
 
 ```bash
 # Clone or download the tool
-chmod +x unauth-api-tester.py
+chmod +x uauthapix.py
 ```
 
 ## Usage
@@ -71,24 +71,24 @@ chmod +x unauth-api-tester.py
 
 ```bash
 # Basic test with base URL
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com
+python uauthapix.py api-spec.json --base-url https://api.example.com
 
 # Use base URL from spec (OpenAPI 3.x servers or Swagger 2.0 host)
-python unauth-api-tester.py api-spec.json
+python uauthapix.py api-spec.json
 ```
 
 ### Advanced Testing
 
 ```bash
 # Test with all techniques enabled
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com --test-all
+python uauthapix.py api-spec.json --base-url https://api.example.com --test-all
 
 # Test specific techniques
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --test-headers --test-paths --test-methods
 
 # Use multiple threads for faster scanning
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --threads 10 --delay 0.1
 ```
 
@@ -96,24 +96,24 @@ python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
 
 ```bash
 # Increase verbosity
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com -v
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com -vv
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com -vvv
+python uauthapix.py api-spec.json --base-url https://api.example.com -v
+python uauthapix.py api-spec.json --base-url https://api.example.com -vv
+python uauthapix.py api-spec.json --base-url https://api.example.com -vvv
 
 # Quiet mode (only show vulnerabilities)
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com -q
+python uauthapix.py api-spec.json --base-url https://api.example.com -q
 
 # Disable colored output
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com --no-color
+python uauthapix.py api-spec.json --base-url https://api.example.com --no-color
 
 # Export results
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --output results.json --format json
 
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --output results.csv --format csv
 
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --output report.html --format html
 ```
 
@@ -121,23 +121,23 @@ python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
 
 ```bash
 # Use custom headers (e.g., API keys for testing)
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --custom-headers headers.txt
 
 # Use proxy (e.g., Burp Suite)
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --proxy http://127.0.0.1:8080
 
 # Enable SSL verification (disabled by default)
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --verify-ssl
 
 # Exclude specific paths
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --exclude "/health" --exclude "/metrics"
 
 # Set custom timeout
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com \
+python uauthapix.py api-spec.json --base-url https://api.example.com \
   --timeout 30
 ```
 
@@ -233,7 +233,7 @@ Professional HTML report with:
 Useful for CI/CD integration:
 
 ```bash
-python unauth-api-tester.py api-spec.json --base-url https://api.example.com
+python uauthapix.py api-spec.json --base-url https://api.example.com
 if [ $? -eq 1 ]; then
     echo "Security vulnerabilities detected!"
     exit 1
@@ -245,13 +245,13 @@ fi
 ### Example 1: Basic Security Scan
 
 ```bash
-python unauth-api-tester.py swagger.json --base-url https://api.example.com
+python uauthapix.py swagger.json --base-url https://api.example.com
 ```
 
 ### Example 2: Comprehensive Security Audit
 
 ```bash
-python unauth-api-tester.py openapi.json \
+python uauthapix.py openapi.json \
   --base-url https://api.example.com \
   --test-all \
   --threads 10 \
@@ -264,7 +264,7 @@ python unauth-api-tester.py openapi.json \
 ### Example 3: Testing Through Burp Suite
 
 ```bash
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://api.example.com \
   --proxy http://127.0.0.1:8080 \
   --test-all
@@ -274,7 +274,7 @@ python unauth-api-tester.py api-spec.json \
 
 ```bash
 # In your CI/CD pipeline
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://staging-api.example.com \
   --test-all \
   --quiet \
@@ -294,7 +294,7 @@ Authorization: Bearer valid-token-123
 Run test:
 ```bash
 # Test which endpoints are accessible even WITH authentication
-python unauth-api-tester.py api-spec.json \
+python uauthapix.py api-spec.json \
   --base-url https://api.example.com \
   --custom-headers headers.txt \
   --test-headers
