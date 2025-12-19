@@ -1,0 +1,23 @@
+# UauthAPIX - Example Custom Headers File
+#
+# Format: Header-Name: Header-Value
+# Lines starting with # are comments and will be ignored
+#
+# Use this file to add custom headers to your requests, such as:
+# - API keys for testing authenticated endpoints
+# - Custom authentication tokens
+# - Session cookies
+# - Any other headers required by your API
+
+# Example: Authorization header with Bearer token
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+# Example: API Key authentication
+# X-API-Key: your-api-key-here
+
+# Example: Session cookie
+# Cookie: session=abc123def456
+
+# Example: Custom headers
+# X-Request-ID: test-123
+# X-Tenant-ID: tenant-001
