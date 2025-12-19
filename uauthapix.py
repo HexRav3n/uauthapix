@@ -364,6 +364,17 @@ def print_summary(stats: TestStats, start_time: float):
 
     if stats.vulnerabilities_found > 0:
         print(f"\n{Colors.RED}{Colors.BOLD}⚠ WARNING: Found {stats.vulnerabilities_found} potentially vulnerable endpoint(s)!{Colors.RESET}")
+
+        # Show vulnerable endpoints
+        print(f"\n{Colors.RED}{Colors.BOLD}Vulnerable Endpoints:{Colors.RESET}")
+        print(f"{Colors.RED}{'─'*70}{Colors.RESET}")
+
+        vulnerable_results = [r for r in stats.results if r.is_vulnerable]
+        for idx, result in enumerate(vulnerable_results, 1):
+            technique_info = f" [{result.technique}]" if result.technique != "direct" else ""
+            print(f"{Colors.RED}{idx:3}. {result.method:7} {result.url} -> {result.status_code}{technique_info}{Colors.RESET}")
+
+        print(f"{Colors.RED}{'─'*70}{Colors.RESET}")
     else:
         print(f"\n{Colors.GREEN}{Colors.BOLD}✓ No unauthorized access vulnerabilities detected{Colors.RESET}")
 
